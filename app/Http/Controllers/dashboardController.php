@@ -10,13 +10,13 @@ class dashboardController extends Controller
     public function index(){
         $role=Auth::user()->role;
         if ($role=='admin') {
-            return redirect('Admin.dashboard');
+            return view('Admin.dashboard');
         }
         elseif($role=='user'){
-            return redirect('User.dashboard');
+            return view('User.dashboard');
         }
         elseif($role=='teacher'){
-            return redirect('Teacher.dashboard');
+            return view('Teacher.dashboard');
         }
     }
 }
